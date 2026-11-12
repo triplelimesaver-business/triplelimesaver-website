@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triple Lime Saver Ltd | Engineering Data-Driven SaaS &amp; Mobile Applications</title>
+  <meta name="description" content="Triple Lime Saver Ltd builds scalable web platforms, AI-integrated SaaS, and native Android apps for UK businesses and global markets." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            lime: {
+              50: '#f7fee7',
+              100: '#ecfccb',
+              200: '#d9f99d',
+              300: '#bef264',
+              400: '#a3e635',
+              500: '#84cc16',
+              600: '#65a30d',
+              700: '#4d7c0f',
+              800: '#3f6212',
+              900: '#365314',
+              950: '#1a2e05',
+            }
+          },
+          boxShadow: {
+            'lime-glow': '0 10px 30px -5px rgba(132, 204, 22, 0.35)',
+            'card-hover': '0 20px 40px -15px rgba(15, 23, 42, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Subtle architectural grid background */
+    .bg-grid-slate {
+      background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .bg-grid-dark {
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    /* Smooth custom transitions */
+    .service-card {
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.28s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+    .tech-tag {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tech-tag:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-lime-300 selection:text-slate-950">
+
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-slate-900 focus:text-lime-400 focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+    Skip to main content
+  </a>
+
+  <!-- ==========================================
+       1. GLOBAL SETUP & NAVIGATION
+  =========================================== -->
+  <header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-600 rounded-lg py-1">
+          <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-800 shadow-sm group-hover:border-lime-500/60 transition-colors">
+            <!-- Triple Lime Geometric Mark -->
+            <span class="flex items-center gap-0.5" aria-hidden="true">
+              <span class="w-1.5 h-5 rounded-full bg-lime-400 group-hover:h-6 transition-all duration-200"></span>
+              <span class="w-1.5 h-3.5 rounded-full bg-lime-500 group-hover:h-5 transition-all duration-200"></span>
+              <span class="w-1.5 h-2.5 rounded-full bg-lime-300 group-hover:h-4 transition-all duration-200"></span>
+            </span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 group-hover:text-slate-700 transition-colors">
+              Triple Lime Saver Ltd
+            </span>
+            <span class="text-[11px] font-mono uppercase tracking-widest text-slate-500 hidden sm:inline">
+              UK Software Studio
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav aria-label="Main Navigation" class="hidden md:flex items-center gap-8">
+          <a href="#services" class="nav-link text-sm font-semibold text-slate-700 hover:text-slate-950 relative py-2 transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-lime-600 hover:after:w-full after:transition-all">
+            Services
+          </a>
+          <a href="#products" class="nav-link text-sm font-semibold text-slate-700 hover:text-slate-950 relative py-2 transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-lime-600 hover:after:w-full after:transition-all">
+            Products
+          </a>
+          <a href="#tech-stack" class="nav-link text-sm font-semibold text-slate-700 hover:text-slate-950 relative py-2 transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-lime-600 hover:after:w-full after:transition-all">
+            Tech Stack
+          </a>
+          <a href="#contact" class="nav-link text-sm font-semibold text-slate-700 hover:text-slate-950 relative py-2 transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-lime-600 hover:after:w-full after:transition-all">
+            Contact
+          </a>
+        </nav>
+
+        <!-- Prominent CTA Button -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-lime-400 hover:bg-lime-300 text-slate-950 font-display font-bold text-sm shadow-sm hover:shadow-lime-glow border border-lime-500/40 transition-all duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900">
+            <span>Get a Quote</span>
+            <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 border border-slate-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-600">
+          <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl">
+      <nav aria-label="Mobile Navigation" class="flex flex-col space-y-2">
+        <a href="#services" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-lime-50 hover:text-slate-950 transition-colors">
+          Services
+        </a>
+        <a href="#products" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-lime-50 hover:text-slate-950 transition-colors">
+          Products
+        </a>
+        <a href="#tech-stack" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-lime-50 hover:text-slate-950 transition-colors">
+          Tech Stack
+        </a>
+        <a href="#contact" class="mobile-nav-link px-4 py-3 rounded-xl text-base font-semibold text-slate-800 hover:bg-lime-50 hover:text-slate-950 transition-colors">
+          Contact
+        </a>
+        <div class="pt-2">
+          <a href="#contact" class="mobile-nav-link w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-lime-400 hover:bg-lime-300 text-slate-950 font-display font-bold text-base shadow-sm transition-all">
+            <span>Get a Quote</span>
+            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==========================================
+         2. HERO SECTION
+    =========================================== -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-950 text-white bg-grid-dark">
+      <!-- Ambient Decorative Glows -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-lime-500/15 blur-[130px] rounded-full pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-0 right-10 w-[400px] h-[300px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          
+          <!-- Left Column: Hero Copy & CTAs -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-lime-300 text-xs font-mono font-medium tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse" aria-hidden="true"></span>
+              <span>UK B2B SOFTWARE ENGINEERING &amp; PROPRIETARY SAAS STUDIO</span>
+            </div>
+
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-[1.12]">
+              Engineering Data-Driven <span class="text-transparent bg-clip-text bg-gradient-to-r from-lime-300 via-lime-400 to-emerald-300">SaaS &amp; Mobile</span> Applications.
+            </h1>
+
+            <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl font-normal">
+              We build scalable web platforms, AI-integrated SaaS, and native Android apps for UK businesses and global markets.
+            </p>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+              <a href="#contact" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-lime-400 hover:bg-lime-300 text-slate-950 font-display font-bold text-base shadow-lime-glow hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:ring-lime-400">
+                <span>Discuss Your Project</span>
+                <i class="fa-solid fa-paper-plane text-sm" aria-hidden="true"></i>
+              </a>
+              <a href="#products" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-display font-semibold text-base border border-slate-700 hover:border-lime-400/50 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:ring-white">
+                <span>View Our Products</span>
+                <i class="fa-solid fa-layer-group text-lime-400 text-sm" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <!-- Trust & Architecture Highlights -->
+            <div class="pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl">
+              <div>
+                <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Cloud &amp; Data</div>
+                <div class="mt-1 font-display font-bold text-sm sm:text-base text-white flex items-center gap-2">
+                  <i class="fa-solid fa-database text-lime-400 text-xs" aria-hidden="true"></i>
+                  <span>BigQuery &amp; SQL</span>
+                </div>
+              </div>
+              <div>
+                <div class="text-xs font-mono uppercase tracking-wider text-slate-400">AI Systems</div>
+                <div class="mt-1 font-display font-bold text-sm sm:text-base text-white flex items-center gap-2">
+                  <i class="fa-solid fa-microchip text-lime-400 text-xs" aria-hidden="true"></i>
+                  <span>Gemini &amp; Vertex AI</span>
+                </div>
+              </div>
+              <div>
+                <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Mobile Native</div>
+                <div class="mt-1 font-display font-bold text-sm sm:text-base text-white flex items-center gap-2">
+                  <i class="fa-brands fa-android text-lime-400 text-sm" aria-hidden="true"></i>
+                  <span>Jetpack Compose</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Architectural Telemetry Console Preview -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl overflow-hidden backdrop-blur-sm">
+              <!-- Console Top Bar -->
+              <div class="flex items-center justify-between px-4 py-3 bg-slate-950/80 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-400/80"></span>
+                  <span class="w-3 h-3 rounded-full bg-lime-400/80"></span>
+                </div>
+                <span class="text-xs font-mono text-slate-400">tls-studio://architecture-overview</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-lime-400/10 text-lime-300 border border-lime-400/20">
+                  PRODUCTION
+                </span>
+              </div>
+
+              <!-- Console Body -->
+              <div class="p-5 sm:p-6 space-y-5">
+                <!-- Active Pipeline Card -->
+                <div class="p-4 rounded-xl bg-slate-950/90 border border-slate-800/90 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono text-lime-400 uppercase tracking-wider flex items-center gap-2">
+                      <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+                      LLM Routing &amp; AEO Telemetry
+                    </span>
+                    <span class="text-xs font-mono text-slate-400">UK-LON-01</span>
+                  </div>
+                  <div class="grid grid-cols-3 gap-2.5 pt-1">
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                      <div class="text-[11px] text-slate-400">ChatGPT Index</div>
+                      <div class="text-sm font-mono font-semibold text-white mt-0.5">Schema OK</div>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                      <div class="text-[11px] text-slate-400">Perplexity</div>
+                      <div class="text-sm font-mono font-semibold text-lime-400 mt-0.5">Cited</div>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
+                      <div class="text-[11px] text-slate-400">Claude</div>
+                      <div class="text-sm font-mono font-semibold text-white mt-0.5">Verified</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Proprietary Product Status -->
+                <div class="space-y-2.5">
+                  <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Proprietary Studio Assets</div>
+                  
+                  <a href="#products" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-800/50 hover:bg-slate-800 border border-slate-700/70 hover:border-lime-400/50 transition-all group">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-lg bg-lime-400/15 border border-lime-400/30 flex items-center justify-center text-lime-300">
+                        <i class="fa-solid fa-robot text-sm" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <div class="text-sm font-display font-bold text-white group-hover:text-lime-300 transition-colors">AEO Engine</div>
+                        <div class="text-xs text-slate-400">B2B Answer Engine Optimization SaaS</div>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-lime-300 group-hover:translate-x-0.5 transition-all" aria-hidden="true"></i>
+                  </a>
+
+                  <a href="#products" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-800/50 hover:bg-slate-800 border border-slate-700/70 hover:border-lime-400/50 transition-all group">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-lg bg-lime-400/15 border border-lime-400/30 flex items-center justify-center text-lime-300">
+                        <i class="fa-brands fa-android text-base" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <div class="text-sm font-display font-bold text-white group-hover:text-lime-300 transition-colors">Lifepocket</div>
+                        <div class="text-xs text-slate-400">Native Android Life in the UK Prep</div>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:text-lime-300 group-hover:translate-x-0.5 transition-all" aria-hidden="true"></i>
+                  </a>
+                </div>
+
+                <!-- Stack Footer inside Console -->
+                <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>STACK: PYTHON • BIGQUERY • COMPOSE</span>
+                  <span class="text-lime-400">READY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. SERVICES SECTION (3-COLUMN GRID)
+    =========================================== -->
+    <section id="services" class="py-24 bg-white border-b border-slate-200/80 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-100 text-lime-900 font-mono text-xs font-semibold uppercase tracking-wider border border-lime-300">
+            <i class="fa-solid fa-code text-[11px]" aria-hidden="true"></i>
+            <span>B2B Engineering Capabilities</span>
+          </div>
+          <h2 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+            Custom Software Built for Performance &amp; Scale
+          </h2>
+          <p class="mt-3 text-lg text-slate-600 leading-relaxed">
+            Partner with our UK engineering studio to design, build, and deploy resilient digital products tailored to your commercial objectives.
+          </p>
+        </div>
+
+        <!-- 3-Column Services Grid -->
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Service 1: Custom Web Development -->
+          <article class="service-card group relative flex flex-col justify-between rounded-2xl bg-slate-50/80 hover:bg-white p-8 border border-slate-200 hover:border-lime-500 shadow-sm hover:shadow-card-hover">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-slate-900 text-lime-400 flex items-center justify-center text-xl shadow-sm group-hover:bg-lime-400 group-hover:text-slate-950 transition-colors duration-200">
+                <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+              </div>
+              <h3 class="mt-6 font-display font-bold text-xl text-slate-900">
+                Custom Web Development
+              </h3>
+              <p class="mt-3 text-slate-700 leading-relaxed text-base">
+                Full-stack web applications, landing pages, and complex backend systems.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-200/90">
+              <ul class="space-y-2 text-xs font-mono text-slate-600">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-lime-700" aria-hidden="true"></i>
+                  <span>High-converting B2B platforms</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-lime-700" aria-hidden="true"></i>
+                  <span>Relational &amp; cloud database architecture</span>
+                </li>
+              </ul>
+              <a href="#contact" data-service="Custom Web Development" class="service-cta mt-6 inline-flex items-center gap-2 text-sm font-display font-bold text-slate-900 group-hover:text-lime-800 transition-colors">
+                <span>Enquire about Web Development</span>
+                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Service 2: Mobile App Development -->
+          <article class="service-card group relative flex flex-col justify-between rounded-2xl bg-slate-50/80 hover:bg-white p-8 border border-slate-200 hover:border-lime-500 shadow-sm hover:shadow-card-hover">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-slate-900 text-lime-400 flex items-center justify-center text-xl shadow-sm group-hover:bg-lime-400 group-hover:text-slate-950 transition-colors duration-200">
+                <i class="fa-brands fa-android" aria-hidden="true"></i>
+              </div>
+              <h3 class="mt-6 font-display font-bold text-xl text-slate-900">
+                Mobile App Development
+              </h3>
+              <p class="mt-3 text-slate-700 leading-relaxed text-base">
+                Native Android applications, from educational tools to interactive games.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-200/90">
+              <ul class="space-y-2 text-xs font-mono text-slate-600">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-lime-700" aria-hidden="true"></i>
+                  <span>Modern Jetpack Compose UI</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-lime-700" aria-hidden="true"></i>
+                  <span>Interactive simulations &amp; smooth UX</span>
+                </li>
+              </ul>
+              <a href="#contact" data-service="Mobile App Development" class="service-cta mt-6 inline-flex items-center gap-2 text-sm font-display font-bold text-slate-900 group-hover:text-lime-800 transition-colors">
+                <span>Enquire about Mobile Apps</span>
+                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Service 3: SaaS & AI Integration -->
+          <article class="service-card group relative flex flex-col justify-between rounded-2xl bg-slate-50/80 hover:bg-white p-8 border border-slate-200 hover:border-lime-500 shadow-sm hover:shadow-card-hover">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-slate-900 text-lime-400 flex items-center justify-center text-xl shadow-sm group-hover:bg-lime-400 group-hover:text-slate-950 transition-colors duration-200">
+                <i class="fa-solid fa-brain" aria-hidden="true"></i>
+              </div>
+              <h3 class="mt-6 font-display font-bold text-xl text-slate-900">
+                SaaS &amp; AI Integration
+              </h3>
+              <p class="mt-3 text-slate-700 leading-relaxed text-base">
+                Specializing in LLM routing, Answer Engine Optimization (AEO), and data analytics infrastructure.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-200/90">
+              <ul class="space-y-2 text-xs font-mono text-slate-600">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-lime-700" aria-hidden="true"></i>
+                  <span>Multi-model Gemini &amp; Vertex AI pipelines</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-lime-700" aria-hidden="true"></i>
+                  <span>AEO schema &amp; BigQuery analytics</span>
+                </li>
+              </ul>
+              <a href="#contact" data-service="SaaS & AI Integration" class="service-cta mt-6 inline-flex items-center gap-2 text-sm font-display font-bold text-slate-900 group-hover:text-lime-800 transition-colors">
+                <span>Enquire about SaaS &amp; AI</span>
+                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. INTERNAL PRODUCTS SHOWCASE (SPLIT LAYOUT)
+    =========================================== -->
+    <section id="products" class="py-24 bg-slate-50 bg-grid-slate border-b border-slate-200/80 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-lime-300 font-mono text-xs font-semibold uppercase tracking-wider">
+            <i class="fa-solid fa-cube text-[11px]" aria-hidden="true"></i>
+            <span>Proprietary Studio Products</span>
+          </div>
+          <h2 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+            Internal Products Engineered In-House
+          </h2>
+          <p class="mt-3 text-lg text-slate-600 leading-relaxed">
+            Alongside client consulting, we build and operate our own commercial SaaS and mobile platforms—applying production lessons directly to every B2B engagement.
+          </p>
+        </div>
+
+        <div class="mt-16 space-y-16">
+          
+          <!-- Product 1: AEO Engine (Split Layout) -->
+          <div class="rounded-3xl bg-white border border-slate-200/90 shadow-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+              
+              <!-- Product 1 Details -->
+              <div class="lg:col-span-6 p-8 sm:p-12 lg:p-14 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-lime-100 text-lime-900 border border-lime-300 font-mono text-xs font-semibold">
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                  <span>B2B SAAS PLATFORM</span>
+                </div>
+
+                <h3 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+                  AEO Engine
+                </h3>
+
+                <p class="text-lg text-slate-700 leading-relaxed">
+                  A B2B SaaS platform helping UK businesses optimize their schema and content for AI Answer Engines (ChatGPT, Perplexity, Claude).
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="font-display font-bold text-sm text-slate-900 flex items-center gap-2">
+                      <i class="fa-solid fa-code-branch text-lime-700" aria-hidden="true"></i>
+                      <span>Structured Schema Graphs</span>
+                    </div>
+                    <p class="mt-1 text-xs text-slate-600">
+                      Automated entity &amp; JSON-LD optimization tailored for LLM ingestion.
+                    </p>
+                  </div>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="font-display font-bold text-sm text-slate-900 flex items-center gap-2">
+                      <i class="fa-solid fa-magnifying-glass-chart text-lime-700" aria-hidden="true"></i>
+                      <span>Multi-Engine Citation Tracking</span>
+                    </div>
+                    <p class="mt-1 text-xs text-slate-600">
+                      Benchmarks brand visibility across ChatGPT, Perplexity, and Claude.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="pt-4 flex flex-wrap items-center gap-4">
+                  <a href="#contact" data-service="AEO Engine Demo / SaaS Inquiry" class="service-cta inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-display font-bold text-sm transition-all shadow-sm">
+                    <span>Request AEO Engine Access</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-lime-400 text-xs" aria-hidden="true"></i>
+                  </a>
+                  <span class="text-xs font-mono text-slate-500">
+                    Built for UK B2B Enterprises
+                  </span>
+                </div>
+              </div>
+
+              <!-- Product 1 Interactive Visual Preview -->
+              <div class="lg:col-span-6 bg-slate-950 p-8 sm:p-12 lg:p-14 h-full flex items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-200">
+                <div class="w-full max-w-md rounded-2xl bg-slate-900 border border-slate-800 p-6 shadow-2xl space-y-5">
+                  <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <div>
+                      <span class="text-xs font-mono text-lime-400 uppercase">AEO Engine Analyzer</span>
+                      <h4 class="text-white font-display font-bold text-base mt-0.5">AI Answer Engine Visibility</h4>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-lime-400/15 text-lime-300 border border-lime-400/30">
+                      96 / 100
+                    </span>
+                  </div>
+
+                  <!-- Engine Score Bars -->
+                  <div class="space-y-3.5">
+                    <div>
+                      <div class="flex justify-between text-xs font-mono mb-1.5">
+                        <span class="text-slate-300 flex items-center gap-2">
+                          <i class="fa-solid fa-bolt text-lime-400" aria-hidden="true"></i> ChatGPT Citation Readiness
+                        </span>
+                        <span class="text-lime-400 font-semibold">98%</span>
+                      </div>
+                      <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                        <div class="bg-lime-400 h-full rounded-full w-[98%]"></div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex justify-between text-xs font-mono mb-1.5">
+                        <span class="text-slate-300 flex items-center gap-2">
+                          <i class="fa-solid fa-compass text-lime-400" aria-hidden="true"></i> Perplexity Source Authority
+                        </span>
+                        <span class="text-lime-400 font-semibold">95%</span>
+                      </div>
+                      <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                        <div class="bg-lime-400 h-full rounded-full w-[95%]"></div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex justify-between text-xs font-mono mb-1.5">
+                        <span class="text-slate-300 flex items-center gap-2">
+                          <i class="fa-solid fa-layer-group text-lime-400" aria-hidden="true"></i> Claude Context Alignment
+                        </span>
+                        <span class="text-lime-400 font-semibold">94%</span>
+                      </div>
+                      <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                        <div class="bg-lime-400 h-full rounded-full w-[94%]"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Schema Snippet Preview -->
+                  <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
+                    <div class="text-slate-500">// Validated Entity Schema</div>
+                    <div><span class="text-lime-400">"@context"</span>: <span class="text-emerald-300">"https://schema.org"</span>,</div>
+                    <div><span class="text-lime-400">"@type"</span>: <span class="text-emerald-300">"SoftwareApplication"</span>,</div>
+                    <div><span class="text-lime-400">"areaServed"</span>: <span class="text-emerald-300">"GB"</span></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Product 2: Lifepocket (Split Layout - Reversed on Desktop) -->
+          <div class="rounded-3xl bg-white border border-slate-200/90 shadow-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+              
+              <!-- Product 2 Visual Preview (Left on Desktop) -->
+              <div class="lg:col-span-6 order-2 lg:order-1 bg-slate-900 p-8 sm:p-12 lg:p-14 h-full flex items-center justify-center border-t lg:border-t-0 lg:border-r border-slate-200">
+                <div class="w-full max-w-md rounded-2xl bg-slate-950 border border-slate-800 p-6 shadow-2xl space-y-5">
+                  <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-lg bg-lime-400 text-slate-950 flex items-center justify-center font-bold">
+                        <i class="fa-brands fa-android" aria-hidden="true"></i>
+                      </div>
+                      <div>
+                        <h4 class="text-white font-display font-bold text-sm">Lifepocket Android</h4>
+                        <span class="text-[11px] font-mono text-slate-400">Exam Simulation Mode</span>
+                      </div>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-900 text-lime-300 border border-slate-700">
+                      Q 18 / 24
+                    </span>
+                  </div>
+
+                  <!-- Interactive Q&A Simulation Card -->
+                  <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3">
+                    <div class="text-xs font-mono text-lime-400 uppercase">Life in the UK Test Practice</div>
+                    <p class="text-sm font-medium text-white">
+                      Which landmark constitutional document was signed in 1215 to establish that even the monarch is subject to the law?
+                    </p>
+                    <div class="space-y-2 pt-1">
+                      <div class="px-3.5 py-2.5 rounded-lg bg-lime-400/15 border border-lime-400/50 text-lime-300 text-xs font-semibold flex items-center justify-between">
+                        <span>Magna Carta</span>
+                        <i class="fa-solid fa-circle-check text-lime-400" aria-hidden="true"></i>
+                      </div>
+                      <div class="px-3.5 py-2.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-400 text-xs">
+                        The Bill of Rights (1689)
+                      </div>
+                      <div class="px-3.5 py-2.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-400 text-xs">
+                        The Act of Union (1707)
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between text-xs font-mono text-slate-400 pt-1">
+                    <span>Jetpack Compose Native UI</span>
+                    <span class="text-lime-400">Pass Rate Readiness: 92%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 2 Details (Right on Desktop) -->
+              <div class="lg:col-span-6 order-1 lg:order-2 p-8 sm:p-12 lg:p-14 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-lime-100 text-lime-900 border border-lime-300 font-mono text-xs font-semibold">
+                  <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                  <span>NATIVE ANDROID APPLICATION</span>
+                </div>
+
+                <h3 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+                  Lifepocket
+                </h3>
+
+                <p class="text-lg text-slate-700 leading-relaxed">
+                  A comprehensive Android application designed for Life in the UK Test preparation, featuring interactive Q&amp;A and exam simulations.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="font-display font-bold text-sm text-slate-900 flex items-center gap-2">
+                      <i class="fa-solid fa-clipboard-check text-lime-700" aria-hidden="true"></i>
+                      <span>Timed Exam Simulations</span>
+                    </div>
+                    <p class="mt-1 text-xs text-slate-600">
+                      Authentic mock test environment mirroring official UK test conditions.
+                    </p>
+                  </div>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="font-display font-bold text-sm text-slate-900 flex items-center gap-2">
+                      <i class="fa-solid fa-bolt-lightning text-lime-700" aria-hidden="true"></i>
+                      <span>Interactive Q&amp;A Engine</span>
+                    </div>
+                    <p class="mt-1 text-xs text-slate-600">
+                      Instant topic feedback, progress analytics, and offline-capable study flows.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="pt-4 flex flex-wrap items-center gap-4">
+                  <a href="#contact" data-service="Mobile App Development (Lifepocket / Custom Android)" class="service-cta inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-display font-bold text-sm transition-all shadow-sm">
+                    <span>Build a Similar Android App</span>
+                    <i class="fa-solid fa-arrow-right text-lime-400 text-xs" aria-hidden="true"></i>
+                  </a>
+                  <span class="text-xs font-mono text-slate-500">
+                    Engineered with Android Studio &amp; Jetpack Compose
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. TECH STACK & EXPERTISE SECTION
+    =========================================== -->
+    <section id="tech-stack" class="py-24 bg-white border-b border-slate-200/80 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-100 text-lime-900 font-mono text-xs font-semibold uppercase tracking-wider border border-lime-300">
+              <i class="fa-solid fa-server text-[11px]" aria-hidden="true"></i>
+              <span>Tech Stack &amp; Expertise</span>
+            </div>
+            <h2 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+              Production-Grade Engineering Stack
+            </h2>
+            <p class="mt-3 text-lg text-slate-600 leading-relaxed">
+              Our systems combine enterprise relational databases, serverless cloud warehouses, native Android toolchains, and modern foundation models.
+            </p>
+          </div>
+
+          <!-- Interactive Filter Tabs -->
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter technologies by domain">
+            <button type="button" data-filter="all" class="stack-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-lime-300 border border-slate-900 transition-all">
+              All Domains
+            </button>
+            <button type="button" data-filter="backend" class="stack-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all">
+              Backend &amp; Data
+            </button>
+            <button type="button" data-filter="mobile" class="stack-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all">
+              Mobile &amp; Frontend
+            </button>
+            <button type="button" data-filter="ai" class="stack-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all">
+              AI &amp; ML
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Domain Panels -->
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Category 1: Backend & Data -->
+          <div data-category="backend" class="stack-panel rounded-2xl bg-slate-50 p-8 border border-slate-200 transition-all duration-300">
+            <div class="flex items-center gap-3 pb-5 border-b border-slate-200">
+              <div class="w-10 h-10 rounded-xl bg-slate-900 text-lime-400 flex items-center justify-center">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Backend &amp; Data</h3>
+                <p class="text-xs font-mono text-slate-500">Pipelines, SQL &amp; Cloud Warehousing</p>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-brands fa-python text-slate-800" aria-hidden="true"></i>
+                <span>Python</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-server text-slate-800" aria-hidden="true"></i>
+                <span>Oracle SQL</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-table-columns text-slate-800" aria-hidden="true"></i>
+                <span>MySQL</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-magnifying-glass-chart text-slate-800" aria-hidden="true"></i>
+                <span>Google Cloud BigQuery</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-bolt text-slate-800" aria-hidden="true"></i>
+                <span>Supabase</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 2: Mobile & Frontend -->
+          <div data-category="mobile" class="stack-panel rounded-2xl bg-slate-50 p-8 border border-slate-200 transition-all duration-300">
+            <div class="flex items-center gap-3 pb-5 border-b border-slate-200">
+              <div class="w-10 h-10 rounded-xl bg-slate-900 text-lime-400 flex items-center justify-center">
+                <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Mobile &amp; Frontend</h3>
+                <p class="text-xs font-mono text-slate-500">Native Android &amp; Modern Web Interfaces</p>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-brands fa-android text-slate-800" aria-hidden="true"></i>
+                <span>Android Studio</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-cubes text-slate-800" aria-hidden="true"></i>
+                <span>Jetpack Compose</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-code text-slate-800" aria-hidden="true"></i>
+                <span>HTML/CSS/JS</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Category 3: AI & ML -->
+          <div data-category="ai" class="stack-panel rounded-2xl bg-slate-50 p-8 border border-slate-200 transition-all duration-300">
+            <div class="flex items-center gap-3 pb-5 border-b border-slate-200">
+              <div class="w-10 h-10 rounded-xl bg-slate-900 text-lime-400 flex items-center justify-center">
+                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900">AI &amp; ML</h3>
+                <p class="text-xs font-mono text-slate-500">Foundation Models &amp; Intelligent Routing</p>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-flask text-slate-800" aria-hidden="true"></i>
+                <span>Google AI Studio</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-microchip text-slate-800" aria-hidden="true"></i>
+                <span>Gemini API</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-cloud text-slate-800" aria-hidden="true"></i>
+                <span>Vertex AI</span>
+              </span>
+              <span class="tech-tag inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white border border-slate-200 hover:border-lime-500 text-slate-900 font-medium text-sm shadow-sm">
+                <i class="fa-solid fa-diagram-project text-slate-800" aria-hidden="true"></i>
+                <span>Machine Learning models</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. CONTACT & LEAD CAPTURE SECTION
+    =========================================== -->
+    <section id="contact" class="py-24 bg-slate-900 text-white relative overflow-hidden scroll-mt-20">
+      <div class="absolute top-0 right-0 w-[450px] h-[450px] bg-lime-500/10 blur-[140px] rounded-full pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left Column: Direct Contact Info Panel -->
+          <div class="lg:col-span-5 space-y-8">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-lime-300 font-mono text-xs font-semibold uppercase tracking-wider border border-slate-700">
+                <i class="fa-solid fa-comments text-[11px]" aria-hidden="true"></i>
+                <span>Start a Conversation</span>
+              </div>
+              <h2 class="mt-4 font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+                Let’s Scope Your Next Software Initiative
+              </h2>
+              <p class="mt-3 text-slate-300 text-base leading-relaxed">
+                Whether you need a custom full-stack web platform, a native Android application, or AI &amp; AEO infrastructure, our engineering team is ready to help.
+              </p>
+            </div>
+
+            <!-- Direct Contact Info Card -->
+            <div class="rounded-2xl bg-slate-950/90 border border-slate-800 p-6 sm:p-8 space-y-6 shadow-xl">
+              <h3 class="font-display font-bold text-lg text-white border-b border-slate-800 pb-3">
+                Direct Contact Information
+              </h3>
+
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-lime-400/15 border border-lime-400/30 text-lime-300 flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Email</div>
+                  <div class="mt-1 flex flex-wrap items-center gap-2">
+                    <a href="mailto:hello@triplelimesaver.co.uk" class="font-mono font-semibold text-sm sm:text-base text-white hover:text-lime-300 transition-colors break-all">
+                      hello@triplelimesaver.co.uk
+                    </a>
+                    <button id="copy-email-btn" type="button" class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-mono border border-slate-700 transition-colors" title="Copy email address">
+                      <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                      <span id="copy-email-label">Copy</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-lime-400/15 border border-lime-400/30 text-lime-300 flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Phone</div>
+                  <div class="mt-1 font-mono font-semibold text-base text-white">
+                    [Insert Phone Number]
+                  </div>
+                </div>
+              </div>
+
+              <!-- Business Hours -->
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-lime-400/15 border border-lime-400/30 text-lime-300 flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Business Hours</div>
+                  <p class="mt-1 text-sm sm:text-base text-slate-200 font-medium leading-snug">
+                    Available for consulting outside standard UK office hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Lead Capture Form (UI Only) -->
+          <div class="lg:col-span-7">
+            <div class="rounded-3xl bg-white text-slate-900 p-8 sm:p-10 lg:p-12 shadow-2xl border border-slate-200">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-5">
+                <div>
+                  <h3 class="font-display font-extrabold text-2xl text-slate-900">
+                    Request a Project Consultation
+                  </h3>
+                  <p class="text-sm text-slate-600 mt-1">
+                    Tell us about your requirements and timeline.
+                  </p>
+                </div>
+                <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lime-100 text-lime-900 font-mono text-xs font-semibold border border-lime-300">
+                  <span class="w-2 h-2 rounded-full bg-lime-600"></span>
+                  Direct to Senior Engineers
+                </span>
+              </div>
+
+              <form id="lead-capture-form" class="mt-6 space-y-6" novalidate>
+                <div>
+                  <label for="client-name" class="block text-sm font-display font-bold text-slate-800 mb-2">
+                    Name <span class="text-rose-600" aria-hidden="true">*</span>
+                  </label>
+                  <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 pointer-events-none">
+                      <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    </span>
+                    <input
+                      type="text"
+                      id="client-name"
+                      name="name"
+                      required
+                      autocomplete="name"
+                      placeholder="Jane Doe / Company Ltd"
+                      class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:border-lime-600 focus:ring-2 focus:ring-lime-500/20 focus:outline-none transition-all text-sm sm:text-base"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="client-email" class="block text-sm font-display font-bold text-slate-800 mb-2">
+                    Email <span class="text-rose-600" aria-hidden="true">*</span>
+                  </label>
+                  <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 pointer-events-none">
+                      <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    <input
+                      type="email"
+                      id="client-email"
+                      name="email"
+                      required
+                      autocomplete="email"
+                      placeholder="name@company.co.uk"
+                      class="w-full pl-11 pr-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:border-lime-600 focus:ring-2 focus:ring-lime-500/20 focus:outline-none transition-all text-sm sm:text-base"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="project-details" class="block text-sm font-display font-bold text-slate-800 mb-2">
+                    Project Details <span class="text-rose-600" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="project-details"
+                    name="project_details"
+                    rows="4"
+                    required
+                    placeholder="Share your goals, target platform (Web, Android, SaaS/AI), and desired launch window..."
+                    class="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:border-lime-600 focus:ring-2 focus:ring-lime-500/20 focus:outline-none transition-all text-sm sm:text-base resize-y"
+                  ></textarea>
+                </div>
+
+                <!-- Validation / Feedback Banner -->
+                <div id="form-feedback" class="hidden rounded-xl p-4 text-sm font-medium" role="status" aria-live="polite"></div>
+
+                <button
+                  type="submit"
+                  class="w-full inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-lime-400 hover:bg-lime-300 text-slate-950 font-display font-bold text-base shadow-md hover:shadow-lime-glow transition-all duration-200 active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-900"
+                >
+                  <span>Send Project Enquiry</span>
+                  <i class="fa-solid fa-paper-plane text-sm" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       7. STATUTORY FOOTER (UK CORPORATE COMPLIANCE)
+  =========================================== -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800/90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-slate-800/80">
+        <!-- Brand Identity -->
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-800">
+            <span class="flex items-center gap-0.5" aria-hidden="true">
+              <span class="w-1 h-4 rounded-full bg-lime-400"></span>
+              <span class="w-1 h-3 rounded-full bg-lime-500"></span>
+              <span class="w-1 h-2 rounded-full bg-lime-300"></span>
+            </span>
+          </div>
+          <span class="font-display font-bold text-lg text-white tracking-tight">
+            Triple Lime Saver Ltd
+          </span>
+        </div>
+
+        <!-- Quick Footer Links -->
+        <nav aria-label="Footer Navigation" class="flex flex-wrap gap-6 text-sm font-medium">
+          <a href="#services" class="hover:text-lime-300 transition-colors">Services</a>
+          <a href="#products" class="hover:text-lime-300 transition-colors">Products</a>
+          <a href="#tech-stack" class="hover:text-lime-300 transition-colors">Tech Stack</a>
+          <a href="#contact" class="hover:text-lime-300 transition-colors">Contact</a>
+        </nav>
+      </div>
+
+      <!-- UK Statutory Corporate Disclosures -->
+      <div class="pt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start text-xs sm:text-sm leading-relaxed">
+        <div class="lg:col-span-5 space-y-1 text-slate-300 font-medium">
+          <p>Copyright &copy; 2026 Triple Lime Saver Ltd. All rights reserved.</p>
+          <p class="text-slate-400">Triple Lime Saver Ltd is a company registered in England and Wales.</p>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col sm:flex-row lg:justify-end gap-4 sm:gap-8 font-mono text-xs text-slate-300">
+          <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+            <span class="block text-[10px] uppercase tracking-wider text-lime-400 mb-0.5">Corporate Registry</span>
+            <span>Company Registration Number: [Insert 8-Digit CRN]</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+            <span class="block text-[10px] uppercase tracking-wider text-lime-400 mb-0.5">Statutory Location</span>
+            <span>Registered Office: [Insert Complete Virtual Address]</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       VANILLA JAVASCRIPT INTERACTIVITY
+  =========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Navigation Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMobileMenu(forceClose = false) {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        const shouldOpen = forceClose ? false : !isExpanded;
+
+        mobileMenuBtn.setAttribute('aria-expanded', String(shouldOpen));
+        mobileMenu.classList.toggle('hidden', !shouldOpen);
+        mobileMenuIcon.className = shouldOpen
+          ? 'fa-solid fa-xmark text-xl'
+          : 'fa-solid fa-bars text-lg';
+      }
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+      }
+
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener('click', () => toggleMobileMenu(true));
+      });
+
+      // 2. Service & Product CTA Pre-fill into Contact Form
+      const serviceCtas = document.querySelectorAll('.service-cta');
+      const projectDetailsInput = document.getElementById('project-details');
+      const clientNameInput = document.getElementById('client-name');
+
+      serviceCtas.forEach((cta) => {
+        cta.addEventListener('click', () => {
+          const serviceName = cta.getAttribute('data-service');
+          if (serviceName && projectDetailsInput) {
+            if (!projectDetailsInput.value.trim()) {
+              projectDetailsInput.value = `Enquiry regarding ${serviceName}: `;
+            }
+            setTimeout(() => {
+              clientNameInput?.focus();
+            }, 450);
+          }
+        });
+      });
+
+      // 3. Interactive Tech Stack Domain Filter
+      const filterButtons = document.querySelectorAll('.stack-filter-btn');
+      const stackPanels = document.querySelectorAll('.stack-panel');
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const selected = btn.getAttribute('data-filter');
+
+          filterButtons.forEach((b) => {
+            const active = b === btn;
+            b.className = active
+              ? 'stack-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-slate-900 text-lime-300 border border-slate-900 transition-all'
+              : 'stack-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all';
+          });
+
+          stackPanels.forEach((panel) => {
+            const category = panel.getAttribute('data-category');
+            if (selected === 'all' || selected === category) {
+              panel.classList.remove('opacity-40', 'scale-[0.98]');
+              panel.classList.add('ring-2', 'ring-lime-500/50');
+              if (selected === 'all') {
+                panel.classList.remove('ring-2', 'ring-lime-500/50');
+              }
+            } else {
+              panel.classList.remove('ring-2', 'ring-lime-500/50');
+              panel.classList.add('opacity-40', 'scale-[0.98]');
+            }
+          });
+        });
+      });
+
+      // 4. Copy Direct Email Button
+      const copyEmailBtn = document.getElementById('copy-email-btn');
+      const copyEmailLabel = document.getElementById('copy-email-label');
+
+      if (copyEmailBtn && copyEmailLabel) {
+        copyEmailBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText('hello@triplelimesaver.co.uk');
+            copyEmailLabel.textContent = 'Copied!';
+            setTimeout(() => {
+              copyEmailLabel.textContent = 'Copy';
+            }, 2000);
+          } catch {
+            copyEmailLabel.textContent = 'hello@triplelimesaver.co.uk';
+          }
+        });
+      }
+
+      // 5. Contact Form UI Handler
+      const leadForm = document.getElementById('lead-capture-form');
+      const feedbackBox = document.getElementById('form-feedback');
+
+      if (leadForm && feedbackBox) {
+        leadForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          const name = document.getElementById('client-name').value.trim();
+          const email = document.getElementById('client-email').value.trim();
+          const details = document.getElementById('project-details').value.trim();
+
+          const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+          if (!name || !emailValid || !details) {
+            feedbackBox.className = 'rounded-xl p-4 text-sm font-medium bg-rose-50 text-rose-900 border border-rose-200 flex items-center gap-2.5';
+            feedbackBox.innerHTML = '<i class="fa-solid fa-circle-exclamation text-rose-600"></i><span>Please complete your Name, a valid Email address, and Project Details.</span>';
+            return;
+          }
+
+          feedbackBox.className = 'rounded-xl p-4 text-sm font-medium bg-lime-100 text-slate-900 border border-lime-400 flex items-start gap-3';
+          feedbackBox.innerHTML = `
+            <i class="fa-solid fa-circle-check text-lime-700 text-lg mt-0.5"></i>
+            <div>
+              <div class="font-display font-bold">Thank you, ${name.replace(/[<>&"']/g, '')}. Your project enquiry is ready.</div>
+              <div class="text-xs text-slate-700 mt-0.5">Our team at <strong>hello@triplelimesaver.co.uk</strong> will review your brief and respond promptly.</div>
+            </div>
+          `;
+          leadForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
